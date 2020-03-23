@@ -381,7 +381,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: NaN, y: 0, z: 6.271147e-39, w: 0}
+  m_BoundingSphereOverride: {x: 3.0092666e-36, y: 6.617445e-24, z: 0, w: 0}
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
@@ -497,11 +497,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   template: {fileID: 7733596185336899683, guid: 0fda90562e139ad4688ae0d4e1aa3fcb,
     type: 3}
-  spawns:
-  - {fileID: 345951213}
-  - {fileID: 1737629930}
-  - {fileID: 114716509}
-  - {fileID: 1919557148}
+  spawnPoints:
+  - {fileID: 345951217}
+  - {fileID: 1737629934}
+  - {fileID: 114716513}
+  - {fileID: 1919557152}
 --- !u!1 &1737629930
 GameObject:
   m_ObjectHideFlags: 0
