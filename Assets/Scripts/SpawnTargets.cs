@@ -5,17 +5,17 @@ using UnityEngine;
 public class SpawnTargets : MonoBehaviour
 {
     [SerializeField] private GameObject template;
-    [SerializeField] private GameObject[] spawns;
+    [SerializeField] private GameObject[] spawnsPoints;
 
-    private Transform[] _spawnsPoints = new Transform[4];
+    private Transform[] _spawnsPointsPosition = new Transform[4];
     private float _timer = 0;
-    private int _count = 1;
+    private int _count = 0;
 
     private void Start()
     {
-        for (int count = 1; count <= spawns.Length; count++)
+        for (int count = 0; count < spawnsPoints.Length; count++)
         {
-            _spawnsPoints[count-1] = spawns[count-1].transform;
+            _spawnsPointsPosition[count] = spawnsPoints[count].transform;
         }
     }
 
@@ -23,19 +23,21 @@ public class SpawnTargets : MonoBehaviour
     {
        CreateEnemie();
     }
+
     private void CreateEnemie()
     {
         if (_timer >= 2)
         {
-             Instantiate(template, _spawnsPoints[_count-1].position, Quaternion.identity);
+             Instantiate(template, _spawnsPointsPosition[_count].position, Quaternion.identity);
             _timer = 0;
-            if (_count == 4)
+
+            if (_count < _spawnsPointsPosition.Length-1)
             {
-                _count = 1;
+                ++_count;
             }
             else
             {
-                ++_count;
+                _count = 0;
             }
         }
         else
